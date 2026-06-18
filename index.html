@@ -143,6 +143,9 @@
   .built-item{background:var(--paper);padding:clamp(16px,2vw,24px) 18px;text-align:center}
   .built-item h4{font-family:var(--serif);font-weight:400;font-size:clamp(1.15rem,1.7vw,1.55rem);margin:0 0 .4em;letter-spacing:-.01em;line-height:1.05}
   .built-item p{font-family:var(--mono);font-size:.66rem;letter-spacing:.03em;line-height:1.5;color:var(--graphite);margin:0}
+  .built-foot{text-align:center;margin-top:clamp(18px,2.5vw,26px)}
+  .built-foot a{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);border-bottom:1px solid var(--graphite-2);padding-bottom:3px;transition:color .25s,border-color .25s}
+  .built-foot a:hover{color:var(--ink);border-color:var(--ink)}
 
   /* full-width capability item (catch-all) */
   .item-wide{grid-column:1 / -1}
@@ -183,7 +186,7 @@
 
   /* ---------- selected work (detailed) ---------- */
   .work2{background:var(--paper)}
-  .work2 .pullex{border:1px solid var(--ink);padding:clamp(24px,4vw,40px);margin-bottom:clamp(34px,4.5vw,56px)}
+  .work2 .pullex{border:1px solid var(--ink);padding:clamp(24px,4vw,40px);margin-bottom:clamp(20px,3vw,34px)}
   .work2 .pullex .eyebrow{display:block;margin-bottom:.5em}
   .work2 .pullex p{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.12;font-size:clamp(1.4rem,3vw,2.4rem);margin:0;max-width:32ch}
   .work2 .pullex p em{font-style:italic}
@@ -202,6 +205,14 @@
   .w-specs .val b{color:var(--ink);font-weight:600}
   @media(max-width:540px){.w-specs li{grid-template-columns:1fr;gap:2px}}
   @media(max-width:900px){.work2 .entry{grid-template-columns:1fr;gap:14px}}
+
+  /* group dividers inside selected work */
+  .work-group{display:flex;align-items:center;gap:20px;margin-top:clamp(36px,5vw,64px)}
+  .work-group:first-of-type{margin-top:clamp(6px,2vw,18px)}
+  .wg-t{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.01em;margin:0;white-space:nowrap}
+  .wg-rule{flex:1;height:1px;background:var(--ink);opacity:.8}
+  .wg-lab{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite-2);white-space:nowrap}
+  .entry.nb{border-top:none;padding-top:clamp(18px,2.5vw,30px)}
 
   /* ---------- how ---------- */
   .how .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline)}
@@ -336,28 +347,21 @@
   </div>
 </div>
 
-<!-- ===== BUILT ===== -->
+<!-- ===== BUILT (teaser) ===== -->
 <section class="built reveal">
   <div class="wrap">
-    <span class="eyebrow built-eyebrow">Some of what we've built &amp; shipped</span>
+    <span class="eyebrow built-eyebrow">Some of what we've built</span>
     <div class="built-row">
-      <div class="built-item"><h4>NextUp</h4><p>Two-sided marketplace · live on iOS</p></div>
+      <div class="built-item"><h4>NextUp</h4><p>Two-sided marketplace · iOS app</p></div>
       <div class="built-item"><h4>ORCA</h4><p>Self-running options research desk</p></div>
       <div class="built-item"><h4>Hermes</h4><p>Crude &amp; RIN optionality engine</p></div>
-      <div class="built-item"><h4>Kalshi strategy</h4><p>Bitcoin event-contracts · 770+ trades</p></div>
-      <div class="built-item"><h4>0DTE Cockpit</h4><p>Live gamma-wall dashboard + paper trader</p></div>
-      <div class="built-item"><h4>VIX Surface</h4><p>Cboe vol curves · 500 stocks daily</p></div>
-      <div class="built-item"><h4>Edge Scanner</h4><p>SEC-verified fund &amp; REIT mispricing</p></div>
-      <div class="built-item"><h4>12-agent panel</h4><p>Biomedical R&amp;D · judge-layer</p></div>
+      <div class="built-item"><h4>12-agent panel</h4><p>Biomedical R&amp;D · judge layer</p></div>
       <div class="built-item"><h4>Demo Permit Watch</h4><p>Government-records lead engine</p></div>
-      <div class="built-item"><h4>Storm Intel Brief</h4><p>Automated lead SaaS + outreach</p></div>
-      <div class="built-item"><h4>GrantSignal</h4><p>Non-dilutive funding deep-research</p></div>
-      <div class="built-item"><h4>MCP connectors</h4><p>7 tools wiring AI to live data</p></div>
-      <div class="built-item"><h4>ThinkorSwim indicators</h4><p>Custom scanners &amp; studies</p></div>
-      <div class="built-item"><h4>Daily digest</h4><p>Discord &amp; X → summarized email</p></div>
-      <div class="built-item"><h4>Tax review</h4><p>~$20K caught, independently verified</p></div>
+      <div class="built-item"><h4>Storm Intelligence Brief</h4><p>Automated lead SaaS + outreach</p></div>
+      <div class="built-item"><h4>GrantSignal</h4><p>Non-dilutive funding research</p></div>
       <div class="built-item"><h4>Investor decks</h4><p>Research-verified, diligence-grade</p></div>
     </div>
+    <div class="built-foot"><a href="#work">See the full body of work ↓</a></div>
   </div>
 </section>
 
@@ -427,7 +431,7 @@
           <p>The growth side — who to sell to, where the leads are, and the data to back it. Often the work that pays for everything else.</p>
         </div>
         <div class="items">
-          <div class="item"><span class="ix">II.01</span><h4>Find your real market</h4><p>Deep AI research — reading demand from social posts, Google Trends, and your own data — that tells you who'll actually buy. One salon owner with a new device wanted to pitch doctors; the research pointed her to gyms and studios instead.</p></div>
+          <div class="item"><span class="ix">II.01</span><h4>Find your real market</h4><p>Deep AI research — reading demand from social posts, Google Trends, and your own data — that tells you who'll actually buy, not who you assume will.</p></div>
           <div class="item"><span class="ix">II.02</span><h4>Lead generation</h4><p>Built-to-order lists of real prospects in your sector — names, not guesses — ready for your outreach.</p></div>
           <div class="item"><span class="ix">II.03</span><h4>Public contracts &amp; grants</h4><p>Public bids, permits, and filings — plus grant and non-dilutive funding programs — surfaced the moment they open, matched to what you do.</p></div>
           <div class="item"><span class="ix">II.04</span><h4>Data on demand</h4><p>Need data you don't have? We scrape it — public sites, social feeds, marketplaces — clean it, and deliver reports on demand or on a schedule you set.</p></div>
@@ -549,13 +553,13 @@
   </div>
 </section>
 
-<!-- ===== SELECTED WORK (detailed) ===== -->
+<!-- ===== SELECTED WORK (detailed, grouped) ===== -->
 <section class="section work2" id="work-more">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="num">More we've shipped</div>
-      <h2 class="serif" style="font-size:clamp(2rem,5vw,4rem);max-width:20ch;margin:.1em 0 0">A fuller look, in plain language.</h2>
-      <p style="color:var(--graphite);max-width:62ch;margin-top:14px;font-size:1.05rem">Real systems — some are our own products, some we built for the work. Read past the names: the value is the <em>method</em>, and the same machinery resizes to your problem.</p>
+      <div class="num">The full body of work</div>
+      <h2 class="serif" style="font-size:clamp(2rem,5vw,4rem);max-width:20ch;margin:.1em 0 0">Everything we've built, in plain language.</h2>
+      <p style="color:var(--graphite);max-width:62ch;margin-top:14px;font-size:1.05rem">Real systems — some are our own products, some we built for the work. We've grouped them: start with what helps a small business directly, then the AI engineering, then the deep markets work. Read past the names — the value is the <em>method</em>, and the same machinery resizes to your problem.</p>
     </div>
 
     <div class="pullex reveal">
@@ -563,153 +567,12 @@
       <p>A salon owner with a new device was sure she had to pitch <em>doctors.</em> Our research read the real demand — and pointed her to gyms and studios instead, a bigger, closer market she'd written off.</p>
     </div>
 
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.01</span>
-        <span class="w-cat">Automated research · options</span>
-        <div class="w-chips"><span>Claude Opus</span><span>670+ tickers</span><span>Self-auditing</span><span>S&amp;P-500 backtest</span></div>
-      </div>
-      <div class="w-body">
-        <h3>ORCA — an options research desk that runs itself</h3>
-        <p>ORCA runs a two-stage pipeline on its own every trading morning. A quant scanner sweeps <b>670+ optionable stocks</b> for gaps between the volatility the market is pricing and what each stock is actually doing — using several realized-vol estimators, an IV-rank from its own growing history, 25-delta skew and a vol cone — then a <b>Claude analyst</b> reads 25+ news, RSS and weather feeds, names the catalyst, and writes ranked trade ideas with exact strikes. Every idea is logged, snapshotted daily, and <b>re-graded a week later by a second AI</b>; a separate weekly engine runs a full S&amp;P-500 scan and backtest on top.</p>
-        <ul class="w-specs">
-          <li><span class="lab">How</span><span class="val">Scanner → Claude analyst → trade logger → weekly AI scorecard + S&amp;P-500 backtest</span></li>
-          <li><span class="lab">Data</span><span class="val">yfinance chains · 9 news/RSS feeds · NWS weather · Polygon option history</span></li>
-          <li><span class="lab">Scale</span><span class="val">670+ tickers daily, on a SQLite IV history that sharpens as it grows</span></li>
-          <li><span class="lab">Proves</span><span class="val">A complete find → decide → log → self-audit loop, fully unattended</span></li>
-        </ul>
-      </div>
-    </div>
+    <!-- GROUP 1 -->
+    <div class="work-group reveal"><h3 class="wg-t">For your business</h3><div class="wg-rule"></div><span class="wg-lab">Six projects</span></div>
 
-    <div class="entry reveal">
+    <div class="entry nb reveal">
       <div class="w-meta">
-        <span class="w-no">W.02</span>
-        <span class="w-cat">Physical commodities · valuation</span>
-        <div class="w-chips"><span>Crude &amp; RINs</span><span>Deterministic</span><span>Fail-safe gating</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Hermes — a crude &amp; RIN optionality desk</h3>
-        <p>Hermes is a desk-grade engine for real commodity decisions — <b>crude oil carry, crush and freight economics</b>, and <b>renewable-fuel (RIN) obligation trades</b> under EPA rules. The numbers are computed deterministically, never guessed; AI agents scout live public data, value each position, and a <b>skeptic layer audits the result</b>. Its signature is refusal — in live mode it won't recommend anything until verified inputs exist — and it turns its findings into a clean written market brief.</p>
-        <ul class="w-specs">
-          <li><span class="lab">How</span><span class="val">Data scout → deterministic valuer → skeptic QA → ranker → written desk memo</span></li>
-          <li><span class="lab">Data</span><span class="val">FRED (WTI / Brent / SOFR) · EPA renewable-volume obligations</span></li>
-          <li><span class="lab">Safeguard</span><span class="val">Verified-true/false gates on every input · auto-veto on missing data</span></li>
-          <li><span class="lab">Proves</span><span class="val">Rigor and restraint — it says "I can't" rather than bluffing</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.03</span>
-        <span class="w-cat">Quant models · bespoke</span>
-        <div class="w-chips"><span>Crude spreads</span><span>Jump-diffusion</span><span>Pricing &amp; risk</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Custom quant models — spreads, jumps &amp; hedging</h3>
-        <p>When a decision needs real math, we build the model. A <b>crude spread model</b> for relative value between grades and tenors; a <b>jump-diffusion model</b> for hedging — pricing the risk of sudden gaps, not just smooth drift; pricing, risk and relative-value models across other assets. Each one is built properly and then explained in plain language you can actually act on.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Crude spread / relative value · jump-diffusion for hedging · pricing &amp; risk models</span></li>
-          <li><span class="lab">How</span><span class="val">Fit on real data → stress-test → translate the output into a clear call</span></li>
-          <li><span class="lab">Stack</span><span class="val">Python · numpy / scipy · historical calibration</span></li>
-          <li><span class="lab">Proves</span><span class="val">Genuine quantitative modeling, not a black-box number</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.04</span>
-        <span class="w-cat">Volatility &amp; options-flow research</span>
-        <div class="w-chips"><span>Earnings vol</span><span>VIX for 500</span><span>Unusual flow</span><span>Skew surfaces</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Volatility &amp; options-flow research, end to end</h3>
-        <p>A whole suite of vol work. We decompose <b>earnings implied-vol</b> from the term structure and rank 150+ names before each print; rebuild <b>Cboe-style VIX curves for all 500 S&amp;P names</b> daily and validate them against the official index; grade names by structural variance-risk premium; map skew surfaces across strikes and expiries; and read <b>unusual options flow and dark-pool prints</b> to see where the real money is positioning.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Earnings-vol decomposition · VIX-for-500 · VRP grading · skew surfaces · unusual-flow reads</span></li>
-          <li><span class="lab">Scale</span><span class="val">150+ earnings names · 500 S&amp;P names daily · multi-year panels</span></li>
-          <li><span class="lab">Validation</span><span class="val">Every VIX curve checked against ^VIX / ^VIX9D / ^VIX3M</span></li>
-          <li><span class="lab">Proves</span><span class="val">Cross-asset vol research at desk standard, benchmarked</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.05</span>
-        <span class="w-cat">Live trading tech · real-time</span>
-        <div class="w-chips"><span>Live broker feed</span><span>Gamma walls</span><span>Excel dashboards</span><span>TOS indicators</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Live cockpits, Excel dashboards &amp; ThinkorSwim indicators</h3>
-        <p>The real-time layer. A <b>0DTE cockpit</b> that reads live broker data, maps the day's gamma walls, and runs a paper-trader with hard risk rules and a nightly self-written journal; <b>live dashboards driven straight off Excel</b> that update as the market ticks; and <b>custom ThinkorSwim indicators and scanners</b> tuned to exactly how you trade.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">0DTE live cockpit + paper trader · live Excel/RTD dashboards · ThinkorSwim studies &amp; scanners</span></li>
-          <li><span class="lab">Data</span><span class="val">ThinkorSwim real-time data via Excel + xlwings · session-anchored regime</span></li>
-          <li><span class="lab">Discipline</span><span class="val">Risk gating · auto-disable on losing streaks · a daily learning journal</span></li>
-          <li><span class="lab">Proves</span><span class="val">Live data plumbed into tools you actually watch and trade from</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.06</span>
-        <span class="w-cat">Custom methods, coded</span>
-        <div class="w-chips"><span>Weis Wave</span><span>Volume imbalance</span><span>Backtested</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Your own method, turned into working software</h3>
-        <p>Have an edge in your head? We make it run. We coded a trader's <b>Weis Wave net-cumulative-volume method</b> — translating a discretionary, chart-read technique into a deterministic, back-testable signal with a scale-free reversal threshold — then ran it across tickers to see where it holds and where it breaks. Bring us the method; we'll operationalize it and stress-test it honestly.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Weis Wave volume-imbalance engine · blind multi-ticker validation</span></li>
-          <li><span class="lab">How</span><span class="val">Encode the rules → make them numeric &amp; deterministic → backtest out-of-sample</span></li>
-          <li><span class="lab">Honesty</span><span class="val">We report where it fails, not just where it works</span></li>
-          <li><span class="lab">Proves</span><span class="val">We can operationalize a discretionary method, then prove or kill it</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.07</span>
-        <span class="w-cat">Mispricing &amp; valuation research</span>
-        <div class="w-chips"><span>CEF / REIT</span><span>Bank discrepancy</span><span>SEC-verified</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Where price and fundamentals disagree — funds, REITs &amp; banks</h3>
-        <p><b>Edge Scanner</b> hunts mispricings across closed-end funds, REITs and overlapping fund holdings — fronted by a verifier that reads the underlying <b>SEC filings and refuses to greenlight a position it can't back up</b>. A separate weekly scan flags <b>bank and equity discrepancies</b> — where rating, profitability and stock price don't line up — down to bank-level detail.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">CEF / REIT / fund-overlap scanner · bank &amp; equity rating-vs-profit-vs-price scan</span></li>
-          <li><span class="lab">Data</span><span class="val">yfinance · Morningstar categories · SEC EDGAR (8-K, Form 4, DEF 14A)</span></li>
-          <li><span class="lab">Output</span><span class="val">Publish-ready weekly reports (markdown + email)</span></li>
-          <li><span class="lab">Proves</span><span class="val">Institutional-grade, filing-checked research on an indie stack</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.08</span>
-        <span class="w-cat">Multi-agent systems</span>
-        <div class="w-chips"><span>3-model debate</span><span>12-agent panel</span><span>MCP server</span><span>Pathways</span></div>
-      </div>
-      <div class="w-body">
-        <h3>AI that checks itself — councils, panels &amp; connectors</h3>
-        <p>A <b>council</b> where Claude, GPT and Gemini debate to consensus; a <b>12-agent biomedical research panel</b> with a judge layer that reconciles competing findings before anything ships; and the <b>connectors</b> that let agents act in the real world — a custom MCP server exposing seven tools so an AI can pull live data and run your scripts. We design the <b>pathways</b> too, so the system is reliable, not a black box.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">3-model debate · 12-agent biomedical panel · custom MCP server (7 tools) · agent pathways</span></li>
-          <li><span class="lab">How</span><span class="val">Parallel agents → adversarial critique / reconciliation → gated, checkable output</span></li>
-          <li><span class="lab">Fits</span><span class="val">Pricing, diligence, forecasting — any expensive, repeated decision</span></li>
-          <li><span class="lab">Proves</span><span class="val">Production multi-agent design, not a single chatbot</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.09</span>
+        <span class="w-no">01</span>
         <span class="w-cat">Data products · lead-gen</span>
         <div class="w-chips"><span>17+ gov sources</span><span>Storm &amp; insurance</span><span>Cold-email engine</span></div>
       </div>
@@ -727,115 +590,7 @@
 
     <div class="entry reveal">
       <div class="w-meta">
-        <span class="w-no">W.10</span>
-        <span class="w-cat">Research &amp; reporting</span>
-        <div class="w-chips"><span>Energy briefs</span><span>Market research</span><span>Industry leads</span></div>
-      </div>
-      <div class="w-body">
-        <h3>When the deliverable is the report itself</h3>
-        <p>Sometimes the product is a written brief. We produce <b>energy-market reports</b> and bespoke <b>market research</b> — reading demand and positioning from data, filings and the news — and write it up as a clean, decision-ready document. The same engine that found a salon owner her real market, or surfaced <b>leads for the insurance industry</b>, writes the brief you put in front of a client or a board.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Energy market reports · demand &amp; market research · industry lead research</span></li>
-          <li><span class="lab">How</span><span class="val">Gather evidence → model it → write a clear, sourced brief</span></li>
-          <li><span class="lab">Output</span><span class="val">A document a decision-maker can act on immediately</span></li>
-          <li><span class="lab">Proves</span><span class="val">Not just analysis — the finished, readable deliverable</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.11</span>
-        <span class="w-cat">Data infrastructure</span>
-        <div class="w-chips"><span>Daily collectors</span><span>Scrapers</span><span>Multi-year panels</span></div>
-      </div>
-      <div class="w-body">
-        <h3>The plumbing that never sleeps</h3>
-        <p>Behind almost everything above is data infrastructure that runs on schedule. We build <b>daily collectors</b> — the VIX surface across 500 names, skew trackers, scrapers and API feeds — that gather, clean and store data every weekday, building multi-year panels nobody had before. If you can't get the data, you can't model it; we make sure it's always flowing.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Daily VIX/skew collectors · web scrapers · API pipelines · multi-year data panels</span></li>
-          <li><span class="lab">How</span><span class="val">Scheduled jobs (GitHub Actions) → clean → store → append to a growing history</span></li>
-          <li><span class="lab">Scale</span><span class="val">Hundreds of records captured every trading day, for years</span></li>
-          <li><span class="lab">Proves</span><span class="val">Reliable, automated data collection — the unglamorous foundation</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.12</span>
-        <span class="w-cat">Build &amp; deliver</span>
-        <div class="w-chips"><span>iOS &amp; web apps</span><span>Investor decks</span><span>Websites</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Apps, decks &amp; the raise — shipped</h3>
-        <p>We ship the finished thing. We designed, built and launched our own two-sided marketplace <b>iOS app, NextUp</b> — live on the App Store; we build <b>investor and pitch decks</b> that are research-verified to survive diligence; and we ship <b>websites, internal tools and customer-facing apps</b>. A landing page, an internal tool, a customer app — whatever the job needs, designed and handed over working.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Ships</span><span class="val">iOS &amp; web apps · internal tools · websites</span></li>
-          <li><span class="lab">Decks</span><span class="val">Research-verified, diligence-grade investor &amp; pitch decks</span></li>
-          <li><span class="lab">Range</span><span class="val">A landing page, an internal tool, or a full customer-facing product</span></li>
-          <li><span class="lab">Proves</span><span class="val">We design, build and launch — not just advise</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.13</span>
-        <span class="w-cat">Prediction markets · strategy</span>
-        <div class="w-chips"><span>Kalshi</span><span>770+ trades</span><span>Polymarket signals</span><span>SPY &amp; crude</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Prediction-market trading &amp; signals</h3>
-        <p>We trade and model prediction markets. A systematic <b>Kalshi strategy on Bitcoin</b> with a full metrics layer — tracked and analyzed across <b>770+ trades</b> and counting — plus a pipeline that pulls <b>Polymarket implied probabilities</b> into our SPY and crude-spread models, so a real crowd-sourced odds signal sits right next to the technicals. Event-contract odds become just another input the model can weigh.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Kalshi Bitcoin strategy (770+ trades, full metrics) · Polymarket probability feed into SPY &amp; crude models</span></li>
-          <li><span class="lab">How</span><span class="val">Track every trade → score the metrics → fold market-implied odds into the model</span></li>
-          <li><span class="lab">Edge</span><span class="val">Alternative data — crowd probabilities most desks ignore</span></li>
-          <li><span class="lab">Proves</span><span class="val">A real, sized track record and novel signal integration</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.14</span>
-        <span class="w-cat">Monitoring &amp; digests · automation</span>
-        <div class="w-chips"><span>Discord &amp; X</span><span>Daily summary</span><span>Charts by email</span></div>
-      </div>
-      <div class="w-body">
-        <h3>Watches the noise, emails you the signal</h3>
-        <p>An automation that monitors the chatter so you don't have to. It tracks <b>Discord and X (Twitter) accounts</b> all day, summarizes everything that mattered, and emails a clean daily digest — including <b>trading setups and charts rendered right into the email</b>. The same engine works for any feed you need watched: competitors, communities, news, or your own alerts.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Built</span><span class="val">Discord + X monitoring · end-of-day AI summary · charted setups emailed</span></li>
-          <li><span class="lab">How</span><span class="val">Collect all day → summarize the signal → email a digest with visuals</span></li>
-          <li><span class="lab">Reuse</span><span class="val">Competitors, communities, news, internal alerts — any feed</span></li>
-          <li><span class="lab">Proves</span><span class="val">Turns a firehose of chatter into one email you'll actually read</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.15</span>
-        <span class="w-cat">AI-assisted review</span>
-        <div class="w-chips"><span>Tax return</span><span>~$20K saved</span><span>Independently verified</span></div>
-      </div>
-      <div class="w-body">
-        <h3>The $20,000 a second pair of eyes caught</h3>
-        <p>A real result: we ran a completed <b>tax return</b> back through AI as a careful second pass — and it surfaced roughly <b>$20,000 the original preparer had missed</b>, later confirmed by the filing authority. It's the clearest version of what AI does best for a small business: a tireless, methodical second set of eyes on the numbers that matter, catching what a rushed human misses.</p>
-        <ul class="w-specs">
-          <li><span class="lab">Result</span><span class="val">~$20,000 recovered on a single return · independently verified</span></li>
-          <li><span class="lab">How</span><span class="val">AI re-checks the filing line by line as a careful second pass</span></li>
-          <li><span class="lab">Scope</span><span class="val">A double-check, not tax advice or a CPA service</span></li>
-          <li><span class="lab">Proves</span><span class="val">AI as a careful checker that can pay for itself in one pass</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry reveal">
-      <div class="w-meta">
-        <span class="w-no">W.16</span>
+        <span class="w-no">02</span>
         <span class="w-cat">Funding research · grants</span>
         <div class="w-chips"><span>SBIR/STTR</span><span>State &amp; foundations</span><span>Freshness-verified</span><span>12-month plan</span></div>
       </div>
@@ -851,7 +606,265 @@
       </div>
     </div>
 
-    <p class="disc" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--graphite-2);max-width:66ch;margin-top:clamp(30px,4vw,44px)">Several of these are our own products, shown to illustrate capability and method. Engagements are scoped to your data and goals — and nothing here is financial, tax, or investment advice, or a promise of any future result.</p>
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">03</span>
+        <span class="w-cat">Research &amp; reporting</span>
+        <div class="w-chips"><span>Energy briefs</span><span>Market research</span><span>Industry leads</span></div>
+      </div>
+      <div class="w-body">
+        <h3>When the deliverable is the report itself</h3>
+        <p>Sometimes the product is a written brief. We produce <b>energy-market reports</b> and bespoke <b>market research</b> — reading demand and positioning from data, filings and the news — and write it up as a clean, decision-ready document. The same engine that reads a market's real demand, or surfaces <b>leads for a whole industry</b>, writes the brief you put in front of a client or a board.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Energy market reports · demand &amp; market research · industry lead research</span></li>
+          <li><span class="lab">How</span><span class="val">Gather evidence → model it → write a clear, sourced brief</span></li>
+          <li><span class="lab">Output</span><span class="val">A document a decision-maker can act on immediately</span></li>
+          <li><span class="lab">Proves</span><span class="val">Not just analysis — the finished, readable deliverable</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">04</span>
+        <span class="w-cat">AI-assisted review</span>
+        <div class="w-chips"><span>Tax return</span><span>~$20K caught</span><span>Second pass</span></div>
+      </div>
+      <div class="w-body">
+        <h3>The five-figure catch a second pass found</h3>
+        <p>A real result on a completed <b>tax return</b>: we ran it back through AI as a careful second pass, and it surfaced roughly <b>$20,000 that had slipped through</b>. It's the clearest version of what AI does best for a small business — a tireless, methodical second set of eyes on the numbers that matter, catching what a rushed pass misses.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Result</span><span class="val">~$20,000 surfaced on a real return as a second-pass check</span></li>
+          <li><span class="lab">How</span><span class="val">AI re-checks the filing line by line as a careful second pass</span></li>
+          <li><span class="lab">Scope</span><span class="val">A double-check, not tax advice or a CPA service</span></li>
+          <li><span class="lab">Proves</span><span class="val">AI as a careful checker that can pay for itself in one pass</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">05</span>
+        <span class="w-cat">Build &amp; deliver</span>
+        <div class="w-chips"><span>iOS &amp; web apps</span><span>Investor decks</span><span>Websites</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Apps, decks &amp; the raise — shipped</h3>
+        <p>We ship the finished thing. We designed, built and launched our own two-sided marketplace <b>iOS app, NextUp</b>; we build <b>investor and pitch decks</b> that are research-verified to survive diligence; and we ship <b>websites, internal tools and customer-facing apps</b>. A landing page, an internal tool, a customer app — whatever the job needs, designed and handed over working.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Ships</span><span class="val">iOS &amp; web apps · internal tools · websites</span></li>
+          <li><span class="lab">Decks</span><span class="val">Research-verified, diligence-grade investor &amp; pitch decks</span></li>
+          <li><span class="lab">Range</span><span class="val">A landing page, an internal tool, or a full customer-facing product</span></li>
+          <li><span class="lab">Proves</span><span class="val">We design, build and launch — not just advise</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">06</span>
+        <span class="w-cat">Monitoring &amp; digests · automation</span>
+        <div class="w-chips"><span>Discord &amp; X</span><span>Daily summary</span><span>Charts by email</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Watches the noise, emails you the signal</h3>
+        <p>An automation that monitors the chatter so you don't have to. It tracks <b>Discord and X (Twitter) accounts</b> all day, summarizes everything that mattered, and emails a clean daily digest — including <b>trading setups and charts rendered right into the email</b>. The same engine works for any feed you need watched: competitors, communities, news, or your own alerts.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Discord + X monitoring · end-of-day AI summary · charted setups emailed</span></li>
+          <li><span class="lab">How</span><span class="val">Collect all day → summarize the signal → email a digest with visuals</span></li>
+          <li><span class="lab">Reuse</span><span class="val">Competitors, communities, news, internal alerts — any feed</span></li>
+          <li><span class="lab">Proves</span><span class="val">Turns a firehose of chatter into one email you'll actually read</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GROUP 2 -->
+    <div class="work-group reveal"><h3 class="wg-t">AI systems &amp; data</h3><div class="wg-rule"></div><span class="wg-lab">Two projects</span></div>
+
+    <div class="entry nb reveal">
+      <div class="w-meta">
+        <span class="w-no">07</span>
+        <span class="w-cat">Multi-agent systems</span>
+        <div class="w-chips"><span>3-model debate</span><span>12-agent panel</span><span>MCP server</span><span>Pathways</span></div>
+      </div>
+      <div class="w-body">
+        <h3>AI that checks itself — councils, panels &amp; connectors</h3>
+        <p>A <b>council</b> where Claude, GPT and Gemini debate to consensus; a <b>12-agent biomedical research panel</b> with a judge layer that reconciles competing findings before anything ships; and the <b>connectors</b> that let agents act in the real world — a custom MCP server exposing seven tools so an AI can pull live data and run your scripts. We design the <b>pathways</b> too, so the system is reliable, not a black box.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">3-model debate · 12-agent biomedical panel · custom MCP server (7 tools) · agent pathways</span></li>
+          <li><span class="lab">How</span><span class="val">Parallel agents → adversarial critique / reconciliation → gated, checkable output</span></li>
+          <li><span class="lab">Fits</span><span class="val">Pricing, diligence, forecasting — any expensive, repeated decision</span></li>
+          <li><span class="lab">Proves</span><span class="val">Production multi-agent design, not a single chatbot</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">08</span>
+        <span class="w-cat">Data infrastructure</span>
+        <div class="w-chips"><span>Daily collectors</span><span>Scrapers</span><span>Multi-year panels</span></div>
+      </div>
+      <div class="w-body">
+        <h3>The plumbing that never sleeps</h3>
+        <p>Behind almost everything here is data infrastructure that runs on schedule. We build <b>daily collectors</b> — the VIX surface across 500 names, skew trackers, scrapers and API feeds — that gather, clean and store data every weekday, building multi-year panels nobody had before. If you can't get the data, you can't model it; we make sure it's always flowing.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Daily VIX/skew collectors · web scrapers · API pipelines · multi-year data panels</span></li>
+          <li><span class="lab">How</span><span class="val">Scheduled jobs (GitHub Actions) → clean → store → append to a growing history</span></li>
+          <li><span class="lab">Scale</span><span class="val">Hundreds of records captured every trading day, for years</span></li>
+          <li><span class="lab">Proves</span><span class="val">Reliable, automated data collection — the unglamorous foundation</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GROUP 3 -->
+    <div class="work-group reveal"><h3 class="wg-t">Markets, trading &amp; quant</h3><div class="wg-rule"></div><span class="wg-lab">Eight projects</span></div>
+
+    <div class="entry nb reveal">
+      <div class="w-meta">
+        <span class="w-no">09</span>
+        <span class="w-cat">Automated research · options</span>
+        <div class="w-chips"><span>Claude Opus</span><span>670+ tickers</span><span>Self-auditing</span><span>S&amp;P-500 backtest</span></div>
+      </div>
+      <div class="w-body">
+        <h3>ORCA — an options research desk that runs itself</h3>
+        <p>ORCA runs a two-stage pipeline on its own every trading morning. A quant scanner sweeps <b>670+ optionable stocks</b> for gaps between the volatility the market is pricing and what each stock is actually doing — using several realized-vol estimators, an IV-rank from its own growing history, 25-delta skew and a vol cone — then a <b>Claude analyst</b> reads 25+ news, RSS and weather feeds, names the catalyst, and writes ranked trade ideas with exact strikes. Every idea is logged, snapshotted daily, and <b>re-graded a week later by a second AI</b>; a separate weekly engine runs a full S&amp;P-500 scan and backtest on top.</p>
+        <ul class="w-specs">
+          <li><span class="lab">How</span><span class="val">Scanner → Claude analyst → trade logger → weekly AI scorecard + S&amp;P-500 backtest</span></li>
+          <li><span class="lab">Data</span><span class="val">yfinance chains · 9 news/RSS feeds · NWS weather · Polygon option history</span></li>
+          <li><span class="lab">Scale</span><span class="val">670+ tickers daily, on a SQLite IV history that sharpens as it grows</span></li>
+          <li><span class="lab">Proves</span><span class="val">A complete find → decide → log → self-audit loop, fully unattended</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">10</span>
+        <span class="w-cat">Physical commodities · valuation</span>
+        <div class="w-chips"><span>Crude &amp; RINs</span><span>Deterministic</span><span>Fail-safe gating</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Hermes — a crude &amp; RIN optionality desk</h3>
+        <p>Hermes is a desk-grade engine for real commodity decisions — <b>crude oil carry, crush and freight economics</b>, and <b>renewable-fuel (RIN) obligation trades</b> under EPA rules. The numbers are computed deterministically, never guessed; AI agents scout live public data, value each position, and a <b>skeptic layer audits the result</b>. Its signature is refusal — in live mode it won't recommend anything until verified inputs exist — and it turns its findings into a clean written market brief.</p>
+        <ul class="w-specs">
+          <li><span class="lab">How</span><span class="val">Data scout → deterministic valuer → skeptic QA → ranker → written desk memo</span></li>
+          <li><span class="lab">Data</span><span class="val">FRED (WTI / Brent / SOFR) · EPA renewable-volume obligations</span></li>
+          <li><span class="lab">Safeguard</span><span class="val">Verified-true/false gates on every input · auto-veto on missing data</span></li>
+          <li><span class="lab">Proves</span><span class="val">Rigor and restraint — it says "I can't" rather than bluffing</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">11</span>
+        <span class="w-cat">Quant models · bespoke</span>
+        <div class="w-chips"><span>Crude spreads</span><span>Jump-diffusion</span><span>Pricing &amp; risk</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Custom quant models — spreads, jumps &amp; hedging</h3>
+        <p>When a decision needs real math, we build the model. A <b>crude spread model</b> for relative value between grades and tenors; a <b>jump-diffusion model</b> for hedging — pricing the risk of sudden gaps, not just smooth drift; pricing, risk and relative-value models across other assets. Each one is built properly and then explained in plain language you can actually act on.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Crude spread / relative value · jump-diffusion for hedging · pricing &amp; risk models</span></li>
+          <li><span class="lab">How</span><span class="val">Fit on real data → stress-test → translate the output into a clear call</span></li>
+          <li><span class="lab">Stack</span><span class="val">Python · numpy / scipy · historical calibration</span></li>
+          <li><span class="lab">Proves</span><span class="val">Genuine quantitative modeling, not a black-box number</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">12</span>
+        <span class="w-cat">Volatility &amp; options-flow research</span>
+        <div class="w-chips"><span>Earnings vol</span><span>VIX for 500</span><span>Unusual flow</span><span>Skew surfaces</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Volatility &amp; options-flow research, end to end</h3>
+        <p>A whole suite of vol work. We decompose <b>earnings implied-vol</b> from the term structure and rank 150+ names before each print; rebuild <b>Cboe-style VIX curves for all 500 S&amp;P names</b> daily and validate them against the official index; grade names by structural variance-risk premium; map skew surfaces across strikes and expiries; and read <b>unusual options flow and dark-pool prints</b> to see where the real money is positioning.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Earnings-vol decomposition · VIX-for-500 · VRP grading · skew surfaces · unusual-flow reads</span></li>
+          <li><span class="lab">Scale</span><span class="val">150+ earnings names · 500 S&amp;P names daily · multi-year panels</span></li>
+          <li><span class="lab">Validation</span><span class="val">Every VIX curve checked against ^VIX / ^VIX9D / ^VIX3M</span></li>
+          <li><span class="lab">Proves</span><span class="val">Cross-asset vol research at desk standard, benchmarked</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">13</span>
+        <span class="w-cat">Live trading tech · real-time</span>
+        <div class="w-chips"><span>Live broker feed</span><span>Gamma walls</span><span>Excel dashboards</span><span>TOS indicators</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Live cockpits, Excel dashboards &amp; ThinkorSwim indicators</h3>
+        <p>The real-time layer. A <b>0DTE cockpit</b> that reads live broker data, maps the day's gamma walls, and runs a paper-trader with hard risk rules and a nightly self-written journal; <b>live dashboards driven straight off Excel</b> that update as the market ticks; and <b>custom ThinkorSwim indicators and scanners</b> tuned to exactly how you trade.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">0DTE live cockpit + paper trader · live Excel/RTD dashboards · ThinkorSwim studies &amp; scanners</span></li>
+          <li><span class="lab">Data</span><span class="val">ThinkorSwim real-time data via Excel + xlwings · session-anchored regime</span></li>
+          <li><span class="lab">Discipline</span><span class="val">Risk gating · auto-disable on losing streaks · a daily learning journal</span></li>
+          <li><span class="lab">Proves</span><span class="val">Live data plumbed into tools you actually watch and trade from</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">14</span>
+        <span class="w-cat">Custom methods, coded</span>
+        <div class="w-chips"><span>Weis Wave</span><span>Volume imbalance</span><span>Backtested</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Your own method, turned into working software</h3>
+        <p>Have an edge in your head? We make it run. We coded a trader's <b>Weis Wave net-cumulative-volume method</b> — translating a discretionary, chart-read technique into a deterministic, back-testable signal with a scale-free reversal threshold — then ran it across tickers to see where it holds and where it breaks. Bring us the method; we'll operationalize it and stress-test it honestly.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Weis Wave volume-imbalance engine · blind multi-ticker validation</span></li>
+          <li><span class="lab">How</span><span class="val">Encode the rules → make them numeric &amp; deterministic → backtest out-of-sample</span></li>
+          <li><span class="lab">Honesty</span><span class="val">We report where it fails, not just where it works</span></li>
+          <li><span class="lab">Proves</span><span class="val">We can operationalize a discretionary method, then prove or kill it</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">15</span>
+        <span class="w-cat">Mispricing &amp; valuation research</span>
+        <div class="w-chips"><span>CEF / REIT</span><span>Bank discrepancy</span><span>SEC-verified</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Where price and fundamentals disagree — funds, REITs &amp; banks</h3>
+        <p><b>Edge Scanner</b> hunts mispricings across closed-end funds, REITs and overlapping fund holdings — fronted by a verifier that reads the underlying <b>SEC filings and refuses to greenlight a position it can't back up</b>. A separate weekly scan flags <b>bank and equity discrepancies</b> — where rating, profitability and stock price don't line up — down to bank-level detail.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">CEF / REIT / fund-overlap scanner · bank &amp; equity rating-vs-profit-vs-price scan</span></li>
+          <li><span class="lab">Data</span><span class="val">yfinance · Morningstar categories · SEC EDGAR (8-K, Form 4, DEF 14A)</span></li>
+          <li><span class="lab">Output</span><span class="val">Publish-ready weekly reports (markdown + email)</span></li>
+          <li><span class="lab">Proves</span><span class="val">Institutional-grade, filing-checked research on an indie stack</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="w-meta">
+        <span class="w-no">16</span>
+        <span class="w-cat">Prediction markets · strategy</span>
+        <div class="w-chips"><span>Kalshi</span><span>770+ trades</span><span>Polymarket signals</span><span>SPY &amp; crude</span></div>
+      </div>
+      <div class="w-body">
+        <h3>Prediction-market trading &amp; signals</h3>
+        <p>We trade and model prediction markets. A systematic <b>Kalshi strategy on Bitcoin</b> with a full metrics layer — tracked and analyzed across <b>770+ trades</b> and counting — plus a pipeline that pulls <b>Polymarket implied probabilities</b> into our SPY and crude-spread models, so a real crowd-sourced odds signal sits right next to the technicals. Event-contract odds become just another input the model can weigh.</p>
+        <ul class="w-specs">
+          <li><span class="lab">Built</span><span class="val">Kalshi Bitcoin strategy (770+ trades, full metrics) · Polymarket probability feed into SPY &amp; crude models</span></li>
+          <li><span class="lab">How</span><span class="val">Track every trade → score the metrics → fold market-implied odds into the model</span></li>
+          <li><span class="lab">Edge</span><span class="val">Alternative data — crowd probabilities most desks ignore</span></li>
+          <li><span class="lab">Proves</span><span class="val">A real, sized track record and novel signal integration</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="disc" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--graphite-2);max-width:66ch;margin-top:clamp(30px,4vw,44px)">Many of these are our own products and systems, shown to illustrate capability and method. Engagements are scoped to your data and goals — and nothing here is financial, tax, or investment advice, or a promise of any future result.</p>
   </div>
 </section>
 
