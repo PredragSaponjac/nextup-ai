@@ -943,15 +943,17 @@
         <p class="sub">Tell us what steals your time or clouds your numbers. We'll tell you, straight, whether AI can help — and how. <b>20 minutes, no pitch.</b></p>
       </div>
       <div class="reveal">
-        <form class="bk" id="bookForm" onsubmit="return false">
+        <form class="bk" id="bookForm" action="https://formspree.io/f/xqeooonw" method="POST">
           <div class="row">
-            <div class="fld"><label for="bk-name">Your name</label><input id="bk-name" type="text" placeholder="Jane Rivera" autocomplete="name"></div>
-            <div class="fld"><label for="bk-biz">Business</label><input id="bk-biz" type="text" placeholder="Rivera Plumbing" autocomplete="organization"></div>
+            <div class="fld"><label for="bk-name">Your name</label><input id="bk-name" name="name" type="text" placeholder="Jane Rivera" autocomplete="name" required></div>
+            <div class="fld"><label for="bk-biz">Business</label><input id="bk-biz" name="business" type="text" placeholder="Rivera Plumbing" autocomplete="organization"></div>
           </div>
-          <div class="fld"><label for="bk-email">Email</label><input id="bk-email" type="email" placeholder="jane@business.com" autocomplete="email"></div>
-          <div class="fld"><label for="bk-msg">What would you point AI at first?</label><textarea id="bk-msg" placeholder="Scheduling, quotes, forecasting demand, checking the books…"></textarea></div>
+          <div class="fld"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" placeholder="jane@business.com" autocomplete="email" required></div>
+          <div class="fld"><label for="bk-msg">What would you point AI at first?</label><textarea id="bk-msg" name="message" placeholder="Scheduling, quotes, forecasting demand, checking the books…"></textarea></div>
+          <input type="hidden" name="_subject" value="New call request — NextUp AI">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
           <div class="bk-actions">
-            <button type="button" class="btn invert" id="bk-send">Request a call <span class="ar">→</span></button>
+            <button type="submit" class="btn invert">Request a call <span class="ar">→</span></button>
             <a class="btn invert ghost" id="bk-cal" href="mailto:hello@nextupservices.com">Email us directly</a>
           </div>
           <div class="bk-note" id="bk-note" role="status" aria-live="polite"></div>
@@ -994,19 +996,17 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const mq=document.getElementById('mq');
 if(mq){mq.innerHTML+=mq.innerHTML;}
 
-/* ---------- booking (mailto, honest no-backend) ---------- */
-const note=document.getElementById('bk-note');
-document.getElementById('bk-send').addEventListener('click',()=>{
-  const name=val('bk-name'),biz=val('bk-biz'),email=val('bk-email'),msg=val('bk-msg');
-  if(!email||!email.includes('@')){note.textContent='Add an email so we can reach you.';return;}
-  const subject=encodeURIComponent('Call request — '+(biz||name||'NextUp AI'));
-  const body=encodeURIComponent(
-    'Name: '+(name||'—')+'\nBusiness: '+(biz||'—')+'\nEmail: '+email+
-    '\n\nWhere I\'d point AI first:\n'+(msg||'—'));
-  window.location.href='mailto:hello@nextupservices.com?subject='+subject+'&body='+body;
-  note.textContent='Opening your email app… if nothing opens, write us at hello@nextupservices.com';
-});
-function val(id){return document.getElementById(id).value.trim();}
+/* ---------- booking (Formspree, AJAX) ---------- */
+const bookForm=document.getElementById('bookForm'),note=document.getElementById('bk-note');
+if(bookForm){bookForm.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  note.textContent='Sending…';
+  try{
+    const res=await fetch(bookForm.action,{method:'POST',body:new FormData(bookForm),headers:{'Accept':'application/json'}});
+    if(res.ok){bookForm.reset();note.textContent='Thanks — we\'ll be in touch within one business day.';}
+    else{note.textContent='Something went wrong — please email hello@nextupservices.com';}
+  }catch(_){note.textContent='Something went wrong — please email hello@nextupservices.com';}
+});}
 
 /* ================= AGENT NETWORK ================= */
 class AgentNetwork{
